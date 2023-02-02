@@ -267,9 +267,9 @@ class Ideas extends CI_Controller
 			}
 
 
-			$id_idea = $this->IdeaModel->create($id, $file);
+			$id_idea = $this->IdeaModel->edit($id, $file);
 			$this->session->set_flashdata(
-				'idea_created', 'Tu idea ha sido registrada, puedes editarla despues. Con el folio: '.$id_idea .' y el numero de empleado registrado: ' . $this->input->post('numero_empleado')
+				'idea_created', 'Tu idea ha sido actualizada, puedes editarla despues. Con el folio: '.$id_idea .' y el numero de empleado registrado: ' . $this->input->post('numero_empleado')
 			);
 			redirect(base_url());
 

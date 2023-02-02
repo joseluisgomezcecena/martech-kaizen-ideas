@@ -73,22 +73,47 @@ class IdeaModel extends CI_Model
 			$has_team = 1;
 		}
 
+		if($file == "empty")
+		{
+			$data = array(
+				'nombre' => $this->input->post('nombre'),
+				'numero_empleado' => $this->input->post('numero_empleado'),
+				'plant' => $this->input->post('plant'),
+				'title' => $this->input->post('idea_title'),
+				'has_team'=>$has_team,
+				'equipo1'=>$first[0],
+				'equipo2'=>$second[0],
+				'equipo3'=>$third[0],
+				'description' => $this->input->post('description'),
+				'resultado_esperado' => $this->input->post('resultado_esperado'),
+				'impacto' => $impacto,
+				'fecha' => date('Y-m-d H:i:s'),
+			);
 
-		$data = array(
-			'nombre' => $this->input->post('nombre'),
-			'numero_empleado' => $this->input->post('numero_empleado'),
-			'plant' => $this->input->post('plant'),
-			'title' => $this->input->post('idea_title'),
-			'has_team'=>$has_team,
-			'equipo1'=>$first[0],
-			'equipo2'=>$second[0],
-			'equipo3'=>$third[0],
-			'description' => $this->input->post('description'),
-			'resultado_esperado' => $this->input->post('resultado_esperado'),
-			'impacto' => $impacto,
-			'archivo' => $file,
-			'fecha' => date('Y-m-d H:i:s'),
-		);
+		}
+		else
+		{
+			$data = array(
+				'nombre' => $this->input->post('nombre'),
+				'numero_empleado' => $this->input->post('numero_empleado'),
+				'plant' => $this->input->post('plant'),
+				'title' => $this->input->post('idea_title'),
+				'has_team'=>$has_team,
+				'equipo1'=>$first[0],
+				'equipo2'=>$second[0],
+				'equipo3'=>$third[0],
+				'description' => $this->input->post('description'),
+				'resultado_esperado' => $this->input->post('resultado_esperado'),
+				'impacto' => $impacto,
+				'archivo' => $file,
+				'fecha' => date('Y-m-d H:i:s'),
+			);
+
+		}
+
+
+		$query = $this->db->update('ideas', $data, array('id' => $id));
+		return $id;
 	}
 
 
