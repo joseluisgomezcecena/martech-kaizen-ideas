@@ -251,7 +251,9 @@ class Ideas extends CI_Controller
 				{
 					$errors = array('error' => $this->upload->display_errors());
 					$file = 'noimage.jpg';
-
+					$this->session->set_flashdata(
+						'errors', 'Error al subir el archivo, asegurate de que sea un archivo valido.'. $errors['error']
+					);
 				}
 				else
 				{
