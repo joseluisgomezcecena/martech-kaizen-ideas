@@ -9,7 +9,7 @@
                                 <span class="icon-holder">
                                     <i class="fa fa-id-card fa-lg"></i>
                                 </span>
-					<span class="title">Asistencia</span>
+					<span class="title">Pantalla Principal</span>
 					<span class="arrow">
                                     <i class="arrow-icon"></i>
                                 </span>
@@ -26,17 +26,16 @@
 			<li class="nav-item dropdown">
 				<a class="dropdown-toggle" href="javascript:void(0);">
                                 <span class="icon-holder">
-                                    <i class="fa fa-cogs fa-lg"></i>
+                                    <i class="fa fa-lightbulb fa-lg"></i>
                                 </span>
-					<span class="title">Configurar Aplicación</span>
+					<span class="title">Ideas</span>
 					<span class="arrow">
                                     <i class="arrow-icon"></i>
                                 </span>
 				</a>
 				<ul class="dropdown-menu">
 					<li>
-						<a href="<?php echo base_url() ?>admin/ingredients">Planners</a>
-					</li>
+						<a href="<?php echo base_url() ?>admin/ingredients">Planners</a></li>
 					<li>
 						<a href="<?php echo base_url() ?>admin/sizes">Horarios</a>
 					</li>
@@ -45,7 +44,7 @@
 
 
 
-			<!--PLATILLOS CONFIG-->
+			<!--PLATILLOS CONFIG
 			<li class="nav-item dropdown">
 				<a class="dropdown-toggle" href="javascript:void(0);">
                                 <span class="icon-holder">
@@ -62,7 +61,7 @@
 					</li>
 				</ul>
 			</li>
-
+-->
 			<?php ?>
 
 
