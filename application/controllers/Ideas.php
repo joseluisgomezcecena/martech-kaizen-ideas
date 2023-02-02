@@ -261,9 +261,13 @@ class Ideas extends CI_Controller
 					$file = $_FILES['userfile']['name'];
 				}
 			}
+			else
+			{
+				$file = 'empty';
+			}
 
 
-			$id_idea = $this->IdeaModel->create($file);
+			$id_idea = $this->IdeaModel->create($id, $file);
 			$this->session->set_flashdata(
 				'idea_created', 'Tu idea ha sido registrada, puedes editarla despues. Con el folio: '.$id_idea .' y el numero de empleado registrado: ' . $this->input->post('numero_empleado')
 			);
