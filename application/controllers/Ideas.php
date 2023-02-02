@@ -241,7 +241,21 @@ class Ideas extends CI_Controller
 
 		if($this->input->post('has_team') == '1')
 		{
-			$this->form_validation->set_rules('equipo[]', 'Miembros del equipo', 'required');
+			//validation for team members
+			$data = 0;
+			$team_members = $this->input->post('equipo', TRUE);
+			foreach ($team_members as $team_member)
+			{
+				if ($team_member != '')
+				{
+					$data++;
+				}
+			}
+
+			if($data == 0)
+			{
+				$this->form_validation->set_rules('equipo[]', 'Miembros del equipo', 'required');
+			}
 		}
 
 		$this->form_validation->set_error_delimiters(

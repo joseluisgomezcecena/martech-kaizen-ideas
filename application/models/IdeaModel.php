@@ -22,6 +22,16 @@ class IdeaModel extends CI_Model
 			$has_team = 1;
 		}
 
+		if($this->input->post("otro") === null)
+		{
+			$otro = "";
+		}
+		else
+		{
+			$otro = $this->input->post("otro");
+		}
+
+
 
 		$data = array(
 			'nombre' => $this->input->post('nombre'),
@@ -35,6 +45,7 @@ class IdeaModel extends CI_Model
 			'description' => $this->input->post('description'),
 			'resultado_esperado' => $this->input->post('resultado_esperado'),
 			'impacto' => $impacto,
+			'impacto_otro'=>$otro,
 			'archivo' => $file,
 			'fecha' => date('Y-m-d H:i:s'),
 		);
@@ -73,6 +84,15 @@ class IdeaModel extends CI_Model
 			$has_team = 1;
 		}
 
+		if($this->input->post("otro") === null)
+		{
+			$otro = "";
+		}
+		else
+		{
+			$otro = $this->input->post("otro");
+		}
+
 		if($file == "empty")
 		{
 			$data = array(
@@ -87,6 +107,7 @@ class IdeaModel extends CI_Model
 				'description' => $this->input->post('description'),
 				'resultado_esperado' => $this->input->post('resultado_esperado'),
 				'impacto' => $impacto,
+				'impacto_otro'=>$otro,
 				'fecha' => date('Y-m-d H:i:s'),
 			);
 
@@ -105,6 +126,7 @@ class IdeaModel extends CI_Model
 				'description' => $this->input->post('description'),
 				'resultado_esperado' => $this->input->post('resultado_esperado'),
 				'impacto' => $impacto,
+				'impacto_otro'=>$otro,
 				'archivo' => $file,
 				'fecha' => date('Y-m-d H:i:s'),
 			);
