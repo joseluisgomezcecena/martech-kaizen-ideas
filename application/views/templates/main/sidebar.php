@@ -16,7 +16,7 @@
 				</a>
 				<ul class="dropdown-menu">
 					<li>
-						<a href="<?php echo base_url() ?>">Checar asistencia</a>
+						<a href="<?php echo base_url() ?>">Principal</a>
 					</li>
 				</ul>
 			</li>
@@ -34,11 +34,13 @@
                                 </span>
 				</a>
 				<ul class="dropdown-menu">
+					<!--
 					<li>
 						<a href="<?php echo base_url() ?>admin/ingredients">Planners</a></li>
 					<li>
 						<a href="<?php echo base_url() ?>admin/sizes">Horarios</a>
 					</li>
+					-->
 				</ul>
 			</li>
 
