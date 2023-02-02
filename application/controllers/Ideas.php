@@ -56,28 +56,38 @@ class Ideas extends CI_Controller
 		}
 		else
 		{
-			//file upload codeigniter 3
-			$config['upload_path'] = './assets/uploads';
-			$config['allowed_types'] = 'ppt|xlsx|xls|doc|docx|pdf|jpg|png|jpeg|gif';
-			$config['max_size'] = '20480';
-			#$config['max_width'] = '2000';
-			#$config['max_height'] = '2000';
 
-			$this->load->library('upload', $config);
-
-			if(!$this->upload->do_upload())
+			if(!empty($_FILES["userfile"]["name"]))
 			{
-				$errors = array('error' => $this->upload->display_errors());
-				$file = 'noimage.jpg';
-				$this->session->set_flashdata(
-				'errors', 'Error al subir el archivo, asegurate de que sea un archivo valido.'. $errors['error']
-				);
+				//file upload codeigniter 3
+				$config['upload_path'] = './assets/uploads';
+				$config['allowed_types'] = 'ppt|xlsx|xls|doc|docx|pdf|jpg|png|jpeg|gif';
+				$config['max_size'] = '20480';
+				#$config['max_width'] = '2000';
+				#$config['max_height'] = '2000';
+
+				$this->load->library('upload', $config);
+
+				if(!$this->upload->do_upload())
+				{
+					$errors = array('error' => $this->upload->display_errors());
+					$file = 'noimage.jpg';
+					$this->session->set_flashdata(
+						'errors', 'Error al subir el archivo, asegurate de que sea un archivo valido.'. $errors['error']
+					);
+				}
+				else
+				{
+					$data = array('upload_data' => $this->upload->data());
+					$file = $_FILES['userfile']['name'];
+				}
 			}
 			else
 			{
-				$data = array('upload_data' => $this->upload->data());
-				$file = $_FILES['userfile']['name'];
+				$file = 'noimage.jpg';
 			}
+
+
 
 
 			$id_idea = $this->IdeaModel->create($file);
