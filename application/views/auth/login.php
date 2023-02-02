@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="row mt-5">
-		<div class="col">
+		<div class="col-lg-6 offset-3 text-center">
 			<?php if($this->session->flashdata('errors')): ?>
 				<div class="alert alert-danger alert-dismissible fade show" role="alert">
 					<strong>🔒 Error de autenticación</strong>
@@ -10,6 +10,8 @@
 					</button>
 				</div>
 			<?php endif; ?>
+
+			<?php echo validation_errors(); ?>
 		</div>
 	</div>
 </div>
@@ -26,7 +28,7 @@
 							<label class="font-weight-semibold" for="userName">Correo electronico:</label>
 							<div class="input-affix">
 								<i class="prefix-icon anticon anticon-user"></i>
-								<input type="email" class="form-control" id="userName" placeholder="Tu correo electronico">
+								<input type="email" class="form-control" name="username" id="userName" placeholder="Tu correo electronico">
 							</div>
 						</div>
 						<div class="form-group">
@@ -34,7 +36,7 @@
 							<a class="float-right font-size-13 text-muted" href="">Olvidaste tu contraseña?</a>
 							<div class="input-affix m-b-10">
 								<i class="prefix-icon anticon anticon-lock"></i>
-								<input type="password" class="form-control" id="password" placeholder="Tu contraseña">
+								<input type="password" class="form-control" id="password" name="password" placeholder="Tu contraseña">
 							</div>
 						</div>
 						<div class="form-group">
@@ -43,7 +45,7 @@
                                                     No tienes cuenta?
                                                     <a class="small" href=""> Registrate</a>
                                                 </span>
-								<button class="btn btn-primary">Ingresar</button>
+								<button type="submit" class="btn btn-primary">Ingresar</button>
 							</div>
 						</div>
 					<?php echo form_close(); ?>

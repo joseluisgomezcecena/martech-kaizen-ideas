@@ -163,5 +163,18 @@ class IdeaModel extends CI_Model
 	}
 
 
+	public function idea_count()
+	{
+		$query = $this->db->get('ideas');
+		return $query->num_rows();
+	}
+
+
+	public function idea_count_by_status($status)
+	{
+		$query = $this->db->get_where('ideas', array('status' => $status));
+		return $query->num_rows();
+	}
+
 
 }

@@ -13,7 +13,7 @@ $route['auth/logout'] = 'auth/logout';
 $route['auth/register'] = 'auth/register';
 
 /*********  ROUTES FOR ADMIN  *********/
-
+$route['admin'] = 'admins/index';
 
 
 /*********  ROUTES FOR USERS  *********/
