@@ -14,11 +14,8 @@ class Pages extends CI_Controller
 		//load header, page & footer
 
 		$this->load->view('templates/main/header',$data);
-		//$this->load->view('templates/main/topnav');
-		//$this->load->view('templates/main/sidebar');
-		//$this->load->view('templates/main/wrapper');
 		$this->load->view('pages/' . $page, $data); //loading page and data
-		#$this->load->view('templates/main/footer');
+		$this->load->view('templates/main/footer_wide');
 
 	}
 
