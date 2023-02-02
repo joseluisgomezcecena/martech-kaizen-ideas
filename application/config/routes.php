@@ -7,6 +7,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | -------------------------------------------------------------------------
 */
 
+/*********  ROUTES FOR AUTH.  *********/
+$route['auth/login'] = 'auth/login';
+$route['auth/logout'] = 'auth/logout';
+$route['auth/register'] = 'auth/register';
+
 /*********  ROUTES FOR ADMIN  *********/
 
 
