@@ -229,14 +229,35 @@
 </script>
 
 <script>
-	$("#equipo").hide();
+
+	var checkbox1 = document.getElementById("check1");
+
+	if(checkbox1.checked) {
+		$("#equipo").show();
+	} else {
+		$("#equipo").hide();
+	}
+
+	checkbox1.addEventListener( 'change', function() {
+		if(this.checked) {
+			$("#equipo").show(300);
+		} else {
+			$("#equipo").hide(200);
+		}
+	});
+
+	//$("#equipo").hide();
+
+
+
+	/*
 	$("#check1").click(function() {
 		if($(this).is(":checked")) {
 			$("#equipo").show(300);
 		} else {
 			$("#equipo").hide(200);
 		}
-	});
+	});*/
 </script>
 
 <script>

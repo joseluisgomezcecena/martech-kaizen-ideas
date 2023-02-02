@@ -14,6 +14,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 /*********  ROUTES FOR USERS  *********/
 $route['users/ideas/new'] = 'ideas/create';
 $route['users/ideas/search'] = 'ideas/search';
+$route['users/ideas/edit/(:any)'] = 'ideas/edit/$1';
 $route['users/ideas/(:any)'] = 'ideas/view/$1';
 $route['users/ideas'] = 'ideas/index';
 

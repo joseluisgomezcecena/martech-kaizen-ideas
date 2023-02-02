@@ -39,7 +39,7 @@
 					<div class="col form-group">
 						<div class="form-check mt-5">
 							<input class="form-check-input" type="checkbox" id="check1" name="has_team" value="1" >
-							<label class="form-check-label">Tengo un equipo de trabajo o mas personas me estan ayudando</label>
+							<label class="form-check-label">Tengo un equipo de trabajo o más personas me están ayudando</label>
 						</div>
 					</div>
 				</div>
@@ -103,7 +103,7 @@
 							<label class="form-check-label">SEGURIDAD E HIGIENE</label>
 						</div>
 						<div class="form-check mt-2">
-							<input class="form-check-input" type="checkbox" id="checkotro" name="impacto[]" value="seguridad" >
+							<input class="form-check-input" type="checkbox" id="checkotro" name="impacto[]" value="otro" >
 							<label class="form-check-label">OTRO</label>
 						</div>
 						<div class="form-group mt-2" id="otro">

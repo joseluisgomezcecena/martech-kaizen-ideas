@@ -11,6 +11,18 @@
 			<?php endif; ?>
 		</div>
 	</div>
+	<div class="row mt-5">
+		<div class="col">
+			<?php if($this->session->flashdata('errors')): ?>
+				<div class="alert alert-danger alert-dismissible fade show" role="alert">
+					<strong>Error</strong> <?php echo $this->session->flashdata('errors'); ?>.
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+			<?php endif; ?>
+		</div>
+	</div>
 </div>
 
 <div class="container">
