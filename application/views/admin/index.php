@@ -15,7 +15,7 @@
 		</div>
 	</div>
 	<div class="col-md-6 col-lg-3">
-		<div class="card">
+		<div class="card card-hover">
 			<div class="card-body">
 				<div class="media align-items-center">
 					<div class="avatar avatar-icon avatar-lg avatar-cyan">
@@ -30,7 +30,7 @@
 		</div>
 	</div>
 	<div class="col-md-6 col-lg-3">
-		<div class="card">
+		<div class="card card-hover">
 			<div class="card-body">
 				<div class="media align-items-center">
 					<div class="avatar avatar-icon avatar-lg avatar-gold">
@@ -45,7 +45,7 @@
 		</div>
 	</div>
 	<div class="col-md-6 col-lg-3">
-		<div class="card">
+		<div class="card card-hover">
 			<div class="card-body">
 				<div class="media align-items-center">
 					<div class="avatar avatar-icon avatar-lg avatar-purple">
@@ -95,7 +95,7 @@
 				<div class="d-flex justify-content-between align-items-center">
 					<h5 class="m-b-0">Mas Recientes (Últimas 5)</h5>
 					<div>
-						<a href="#" class="btn btn-sm btn-dark">Ver Todas</a>
+						<a href="<?php echo base_url() ?>admin/report" class="btn btn-sm btn-dark">Ver Todas</a>
 					</div>
 				</div>
 				<div class="m-t-30">
@@ -118,16 +118,15 @@
 									<i class="anticon anticon-ellipsis"></i>
 								</a>
 								<div class="dropdown-menu">
-									<button class="dropdown-item" type="button">
+									<a href="<?php echo base_url() ?>admin/evaluate/<?php echo $recent['id'] ?>" class="dropdown-item">
 										<i class="anticon anticon-eye"></i>
 										<span class="m-l-10">Evaluar Idea</span>
-									</button>
+									</a>
 								</div>
 							</div>
 						</div>
 					</div>
 					<?php endforeach; ?>
-
 
 				</div>
 			</div>
