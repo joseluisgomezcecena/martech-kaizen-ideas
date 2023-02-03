@@ -190,6 +190,18 @@
 <script src="<?php echo base_url() ?>assets/vendors/datatables/dataTables.bootstrap.min.js"></script>
 
 
+<!--buttons datatable-->
+<!--
+https://code.jquery.com/jquery-3.5.1.js
+https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js
+-->
+<script src="https://cdn.datatables.net/buttons/2.3.4/js/dataTables.buttons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.3.4/js/buttons.html5.min.js"></script>
+
+
 <!-- page js -->
 <script src="<?php echo base_url() ?>assets/vendors/chartjs/Chart.min.js"></script>
 <script src="<?php echo base_url() ?>assets/js/pages/dashboard-crm.js"></script>
@@ -198,7 +210,20 @@
 <script src="<?php echo base_url() ?>assets/js/app.min.js"></script>
 
 <script>
-	$('#data-table').DataTable();
+	//$('#data-table').DataTable();
+
+
+	$('#data-table').DataTable( {
+		dom: 'Bfrtip',
+		aaSorting: [],
+		buttons: [
+			'copyHtml5',
+			'excelHtml5',
+			'csvHtml5',
+			'pdfHtml5'
+		]
+	} );
+
 
 </script>
 
@@ -230,6 +255,7 @@
 
 <script>
 
+	//check forms
 	var checkbox1 = document.getElementById("check1");
 
 	if(checkbox1.checked) {
@@ -245,19 +271,32 @@
 			$("#equipo").hide(200);
 		}
 	});
-
-	//$("#equipo").hide();
-
+	//check forms
 
 
-	/*
-	$("#check1").click(function() {
-		if($(this).is(":checked")) {
-			$("#equipo").show(300);
+
+</script>
+
+
+<script>
+	//select evaluation
+	if($("#status").val() == "3" || $("#status").val() == "") {
+		$("#retro").hide();
+	} else {
+		$("#retro").show();
+	}
+
+	var select = document.getElementById("status");
+
+
+
+	select.addEventListener( 'change', function() {
+		if(this.value == "3") {
+			$("#retro").show(300);
 		} else {
-			$("#equipo").hide(200);
+			$("#retro").hide(200);
 		}
-	});*/
+	});
 </script>
 
 <script>
