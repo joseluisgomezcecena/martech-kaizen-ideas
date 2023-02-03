@@ -46,7 +46,7 @@
 				<div id="retro" class="row">
 					<div class="form-group col">
 						<label for="body">Retroalimentación</label>
-						<textarea class="form-control" id="retroalimentacion" name="retroalimentacion" rows="3"></textarea>
+						<textarea class="form-control" id="retroalimentacion" name="notas" rows="3"></textarea>
 					</div>
 				</div>
 

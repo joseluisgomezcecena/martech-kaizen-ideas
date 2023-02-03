@@ -139,6 +139,38 @@ class IdeaModel extends CI_Model
 	}
 
 
+    public function update_status($id, $file)
+	{
+		if($this->input->post('notas') == "")
+		{
+			$notas = "N/A";
+		}
+		else
+		{
+			$notas = $this->input->post('notas');
+		}
+
+		if($file == "empty")
+		{
+			$data = array(
+				'status' => $this->input->post('status'),
+				'notas' => $notas,
+			);
+		}
+		else
+		{
+			$data = array(
+				'status' => $this->input->post('status'),
+				'archivo_evaluador' => $file,
+				'notas' => $notas,
+			);
+		}
+
+
+		$query = $this->db->update('ideas', $data, array('id' => $id));
+		return $id;
+	}
+
 	public function get($id)
 	{
 		$this->db->select('*');
