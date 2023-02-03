@@ -1,10 +1,35 @@
 <?php
 class Admins extends CI_Controller
 {
-	public function create()
+	public function index()
 	{
 		$data['title'] = '💡 Ideas Martech | Admin Panel.';
 		$data['idea_count'] = $this->IdeaModel->count();
+		$data['recents'] = $this->IdeaModel->get_recent();
+		$data['waiting'] = $this->IdeaModel->count_by_status(0);
+		$data['accepted'] = $this->IdeaModel->count_by_status(1);
+		$data['prize'] = $this->IdeaModel->count_by_status(2);
+		$data['rejected'] = $this->IdeaModel->count_by_status(3);
+
+
+		/*****Charts data*****/
+		$query = $this->db->query("		
+		SELECT COUNT(id) as count,MONTHNAME(created_at) as month_name 
+		FROM ideas 
+		WHERE YEAR(created_at) = '" . date('Y') . "'
+      	GROUP BY YEAR(created_at),MONTH(created_at)
+		");
+
+		$record = $query->result();
+
+		foreach($record as $row) {
+			$data['label'][] = $row->month_name;
+			$data['data'][] = (int) $row->count;
+		}
+
+		$data['chart_data'] = json_encode($data);
+
+
 
 			//load header, page & footer
 		$this->load->view('templates/main/header',$data);

@@ -1,139 +1,248 @@
 <div class="row">
-	<div class="col">
-		<div class="card">
-			<div class="card-header">
-				<h3 class="font-weight-bolder mt-3">Registra tu idea</h3>
-			</div>
+	<div class="col-md-6 col-lg-3">
+		<div class="card card-hover">
 			<div class="card-body">
-				<?php echo validation_errors(); ?>
-
-				<?php echo form_open_multipart(base_url() . "ideas/create"); ?>
-
-				<div class="row">
-					<div class="form-group col-lg-8">
-						<label for="body">Nombre del empleado</label>
-						<input id="editor2" class="form-control"  name="nombre" placeholder="Nombre Y Apellidos" required>
+				<div class="media align-items-center">
+					<div class="avatar avatar-icon avatar-lg avatar-blue">
+						<i class="anticon anticon-dollar"></i>
 					</div>
-					<div class="form-group col-lg-2">
-						<label for="body">Numero de empleado</label>
-						<input id="editor2" class="form-control"  name="numero_empleado" placeholder="Numero de Empleado" required>
-					</div>
-					<div class="form-group col-lg-2">
-						<label for="body">Fecha</label>
-						<input id="editor2" class="form-control"  name="fecha" placeholder="Fecha" value="<?php echo date("m/d/Y") ?>" disabled>
+					<div class="m-l-15">
+						<h2 class="m-b-0"><?php echo $waiting ?></h2>
+						<p class="m-b-0 text-muted">En Espera</p>
 					</div>
 				</div>
-
-				<div class="row">
-					<div class="col form-group">
-						<label for="body">Planta(en la que labora)</label>
-						<select class="form-control" name="plant" required>
-							<option value="">Selecciona una planta</option>
-							<option value="1">Planta 1</option>
-							<option value="2">Planta 2</option>
-							<option value="3">Planta 3</option>
-							<option value="4">Planta 4</option>
-							<option value="6">Planta 6</option>
-						</select>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6 col-lg-3">
+		<div class="card">
+			<div class="card-body">
+				<div class="media align-items-center">
+					<div class="avatar avatar-icon avatar-lg avatar-cyan">
+						<i class="anticon anticon-line-chart"></i>
 					</div>
-					<div class="col form-group">
-						<div class="form-check mt-5">
-							<input class="form-check-input" type="checkbox" id="check1" name="has_team" value="1" >
-							<label class="form-check-label">Tengo un equipo de trabajo o más personas me están ayudando</label>
-						</div>
+					<div class="m-l-15">
+						<h2 class="m-b-0"><?php echo $accepted ?></h2>
+						<p class="m-b-0 text-muted">Aceptadas</p>
 					</div>
 				</div>
-
-				<div id="equipo" class="row">
-					<div class="form-group col">
-						<label for="body">Nombre del empleado #1</label>
-						<input id="editor2" class="form-control"  name="equipo[]" placeholder="Nombre Y Apellidos" >
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6 col-lg-3">
+		<div class="card">
+			<div class="card-body">
+				<div class="media align-items-center">
+					<div class="avatar avatar-icon avatar-lg avatar-gold">
+						<i class="anticon anticon-profile"></i>
 					</div>
-					<div class="form-group col">
-						<label for="body">Nombre del empleado #2</label>
-						<input id="editor2" class="form-control"  name="equipo[]" placeholder="Nombre Y Apellidos" >
-					</div>
-					<div class="form-group col">
-						<label for="body">Nombre del empleado #3</label>
-						<input id="editor2" class="form-control"  name="equipo[]" placeholder="Nombre Y Apellidos" >
-					</div>
-				</div>
-
-				<div class="row mt-3">
-					<div class="form-group col">
-						<label for="title">Nombre de la idea</label>
-						<input type="text" class="form-control" name="idea_title" placeholder="Titulo o Nombre de la Idea.">
+					<div class="m-l-15">
+						<h2 class="m-b-0"><?php echo $prize ?></h2>
+						<p class="m-b-0 text-muted">Premiadas</p>
 					</div>
 				</div>
-				<div class="row">
-					<div class="form-group col">
-						<label for="body">Descripción</label>
-						<textarea id="editor1" class="form-control" rows="5" name="description" placeholder="Descripción"></textarea>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6 col-lg-3">
+		<div class="card">
+			<div class="card-body">
+				<div class="media align-items-center">
+					<div class="avatar avatar-icon avatar-lg avatar-purple">
+						<i class="anticon anticon-user"></i>
+					</div>
+					<div class="m-l-15">
+						<h2 class="m-b-0"><?php echo $rejected ?></h2>
+						<p class="m-b-0 text-muted">Recahzadas</p>
 					</div>
 				</div>
-				<div class="row">
-					<div class="form-group col">
-						<label for="body">Que se espera de la mejora</label>
-						<textarea id="editor1" class="form-control" rows="6" name="resultado_esperado" placeholder="Que se espera?"></textarea>
-					</div>
-					<div class="form-group col">
-						<label for="body">Impacto</label>
-						<div class="form-check mt-2">
-							<input class="form-check-input" type="checkbox" id="check1" name="impacto[]" value="calidad" >
-							<label class="form-check-label">CALIDAD</label>
-						</div>
-						<div class="form-check mt-2">
-							<input class="form-check-input" type="checkbox" id="check1" name="impacto[]" value="entregas" >
-							<label class="form-check-label">ENTREGAS A TIEMPO</label>
-						</div>
-						<div class="form-check mt-2">
-							<input class="form-check-input" type="checkbox" id="check1" name="impacto[]" value="eficiencia" >
-							<label class="form-check-label">EFICIENCIA</label>
-						</div>
-						<div class="form-check mt-2">
-							<input class="form-check-input" type="checkbox" id="check1" name="impacto[]" value="ambiente" >
-							<label class="form-check-label">AMBIENTE LABORAL</label>
-						</div>
-						<div class="form-check mt-2">
-							<input class="form-check-input" type="checkbox" id="check1" name="impacto[]" value="productividad" >
-							<label class="form-check-label">PRODUCTIVIDAD</label>
-						</div>
-						<div class="form-check mt-2">
-							<input class="form-check-input" type="checkbox" id="check1" name="impacto[]" value="seguridad" >
-							<label class="form-check-label">SEGURIDAD E HIGIENE</label>
-						</div>
-						<div class="form-check mt-2">
-							<input class="form-check-input" type="checkbox" id="checkotro" name="impacto[]" value="otro" >
-							<label class="form-check-label">OTRO</label>
-						</div>
-						<div class="form-group mt-2" id="otro">
-							<label for="title">OTRO</label>
-							<input type="text" class="form-control" name="otro"  placeholder="Indique que se mejorara.">
-						</div>
-					</div>
-				</div>
-
-				<div class="row mt-2 mb-5">
-					<div class="col">
-						<div class="custom-file">
-							<input type="file" class="custom-file-input" name="userfile"  onchange="alert('Archivo seleccionado: '+ $('input[type=file]').val());">
-							<label class="custom-file-label" for="customFile">Adjuntar Un Archivo</label>
-						</div>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="col">
-						<button type="submit" class="btn btn-primary">Registrar</button>
-					</div>
-				</div>
-
-
-
-
-				<?php echo form_close(); ?>
-
 			</div>
 		</div>
 	</div>
 </div>
+
+
+<div class="row">
+	<div class="col-md-8 col-lg-8"><!--antes 8-->
+		<div class="card sb-card-shadow">
+			<div class="card-body">
+				<div class="d-flex justify-content-between align-items-center mb-5">
+					<h5 class="font-weight-bolder">Ideas Recibidas Por Mes.</h5>
+
+					<div>
+						<div class="btn-group">
+							<button class="btn btn-sm btn-dark">
+								<span>Ver Reportes</span>
+							</button>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="chart-container" style="position: relative; width: 100%; height: auto">
+					<canvas class="chart" id="andon-chart"></canvas>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<div class="col-md-12 col-lg-4">
+		<div class="card">
+			<div class="card-body">
+				<div class="d-flex justify-content-between align-items-center">
+					<h5 class="m-b-0">Mas Recientes (Últimas 5)</h5>
+					<div>
+						<a href="#" class="btn btn-sm btn-dark">Ver Todas</a>
+					</div>
+				</div>
+				<div class="m-t-30">
+					<?php foreach ($recents as $recent): ?>
+					<div class="m-b-25">
+						<div class="d-flex align-items-center justify-content-between">
+							<div class="media align-items-center">
+								<div class="font-size-35">
+									<i class="anticon anticon-bulb text-primary"></i>
+								</div>
+								<div class="m-l-15">
+									<h6 class="m-b-0">
+										<a class="text-dark" href="javascript:void(0);"><?php echo $recent['title'] ?></a>
+									</h6>
+									<p class="text-muted m-b-0">Enviada: <?php echo $recent['fecha'] ?></p>
+								</div>
+							</div>
+							<div class="dropdown dropdown-animated scale-left">
+								<a class="text-gray font-size-18" href="javascript:void(0);" data-toggle="dropdown">
+									<i class="anticon anticon-ellipsis"></i>
+								</a>
+								<div class="dropdown-menu">
+									<button class="dropdown-item" type="button">
+										<i class="anticon anticon-eye"></i>
+										<span class="m-l-10">Evaluar Idea</span>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<?php endforeach; ?>
+
+
+				</div>
+			</div>
+		</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+	<script>
+		$(function(){
+			//get the bar chart canvas
+			var cData = JSON.parse(`<?php echo $chart_data; ?>`);
+			var ctx = $("#andon-chart");
+
+
+			//bar chart data
+			var data = {
+				labels: cData.label,
+				datasets: [
+					{
+						label: "Ideas Recibidas.",
+						data: cData.data,
+						backgroundColor: [
+							"rgba(0,210,146,0.5)",
+							"rgba(0,210,146,0.5)",
+							"rgba(0,210,146,0.5)",
+							"rgba(0,210,146,0.5)",
+							"rgba(0,210,146,0.5)",
+							"rgba(0,210,146,0.5)",
+							"rgba(0,210,146,0.5)",
+							"rgba(0,210,146,0.5)",
+							"rgba(0,210,146,0.5)",
+							"rgba(0,210,146,0.5)",
+							"rgba(0,210,146,0.5)",
+						],
+						borderColor: [
+							"#00c085",
+							"#00c085",
+							"#00c085",
+							"#00c085",
+							"#00c085",
+							"#00c085",
+							"#00c085",
+							"#00c085",
+							"#00c085",
+							"#00c085",
+							"#00c085",
+							"#00c085",
+						],
+						borderWidth: [1, 1, 1, 1, 1,1,1,1, 1, 1, 1,1,1]
+					}
+				]
+			};
+
+			//options
+			var options = {
+				responsive: true,
+				title: {
+					display: false,
+					position: "top",
+					text: "Ideas por mes",
+					fontSize: 18,
+					fontColor: "#111"
+				},
+				legend: {
+					display: false,
+					position: "bottom",
+					labels: {
+						fontColor: "#333",
+						fontSize: 12
+					}
+				},
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero: true
+						},
+						gridLines: {
+							/*display: false ,*/
+							drawBorder: false,
+							offsetGridLines: false,
+							drawTicks: false,
+							borderDash: [3, 4],
+							zeroLineWidth: 1,
+							zeroLineBorderDash: [3, 4]
+						},
+					}],
+					xAxes: [{
+						gridLines: {
+							display: false ,
+							color: "#51ffcb"
+						},
+					}]
+				},
+			};
+
+			//create bar Chart class object
+			var chart1 = new Chart(ctx, {
+				type: "bar",
+				data: data,
+				options: options
+			});
+
+		});
+
+
+	</script>
