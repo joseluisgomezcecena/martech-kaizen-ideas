@@ -27,8 +27,8 @@ date_default_timezone_set('America/Tijuana');
 */
 
 	//$config['base_url'] = 'http://localhost/martech_distribution/app';
-	//$config['base_url'] = 'http://mxmtsvrandon1/ideas';
-	$config['base_url'] = 'http://localhost/ideasKaizen';
+	$config['base_url'] = 'http://mxmtsvrandon1/ideas';
+	#$config['base_url'] = 'http://localhost/ideasKaizen';
 
 /*
 |--------------------------------------------------------------------------
