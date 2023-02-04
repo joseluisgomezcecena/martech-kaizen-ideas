@@ -195,6 +195,35 @@ class IdeaModel extends CI_Model
 	}
 
 
+
+	public function form_search()
+	{
+		$status = $this->input->post('status');
+		$empleado = $this->input->post('numero_empleado');
+		$desde = $this->input->post('desde');
+		$hasta = $this->input->post('hasta');
+
+		$this->db->select('*');
+		$this->db->from('ideas');
+		if($status != "")
+		{
+			$this->db->where('status', $status);
+		}
+		if($empleado != "")
+		{
+			$this->db->where('numero_empleado', $empleado);
+		}
+		if($desde != "")
+		{
+			$this->db->where('fecha >=', $desde);
+		}
+		if($hasta != "")
+		{
+			$this->db->where('fecha <=', $hasta);
+		}
+	}
+
+
 	public function count()
 	{
 		$query = $this->db->get('ideas');

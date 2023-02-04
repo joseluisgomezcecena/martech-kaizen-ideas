@@ -44,6 +44,7 @@ class Admins extends CI_Controller
 	public function search()
 	{
 		$data['title'] = 'Ideas Martech | Buscar idea 💡.';
+		$data['ideas'] = $this->IdeaModel->search();
 
 		$this->form_validation->set_rules('numero_empleado', 'Numero de empleado', 'required');
 		$this->form_validation->set_rules('id', 'Numero de Folio', 'required');

@@ -1,10 +1,63 @@
 <?php
 class Evaluations extends CI_Controller
 {
-	public function index($id)
+	public function index()
 	{
 		$data['title'] = '💡Evaluaciones | Martech Medical Ideas v2.0.';
-		$data['idea'] = $this->IdeaModel->get($id);
+		$data['ideas'] = $this->IdeaModel->get_all();
+
+		if(empty($data['ideas']))
+		{
+			show_404();
+		}
+
+		$this->form_validation->set_rules('fields', 'Algun parametro de busqueda.', 'required');
+
+		$this->form_validation->set_error_delimiters(
+			'<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>Error en parametros de busqueda</strong>',
+			'<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span></button></div>'
+		);
+
+		if($this->form_validation->run() === FALSE)
+		{
+			$this->load->view('templates/main/header',$data);
+			$this->load->view('templates/main/topnav');
+			$this->load->view('templates/main/sidebar');
+			$this->load->view('templates/main/wrapper');
+			$this->load->view('evaluations/index', $data); //loading page and data
+			$this->load->view('templates/main/footer');
+		}
+		else
+		{
+			$idea = $this->IdeaModel->search();
+			if($idea == 0)
+			{
+				$this->session->set_flashdata(
+					'idea_not_found', 'No se encontraron resultados con los parametros de busqueda.'
+				);
+				redirect(base_url('evaluations'));
+			}
+			else
+			{
+
+				$data['ideas'] = $idea;
+				$this->load->view('templates/main/header',$data);
+				$this->load->view('templates/main/topnav');
+				$this->load->view('templates/main/sidebar');
+				$this->load->view('templates/main/wrapper');
+				$this->load->view('evaluations/index', $data); //loading page and data
+				$this->load->view('templates/main/footer');
+
+			}
+		}
+
+	}
+
+
+	public function evaluate($id)
+	{
+		$data['title'] = '💡Evaluaciones | Martech Medical Ideas v2.0.';
+		$data['idea'] = $this->IdeaModel->get_all($id);
 
 		if(empty($data['idea']))
 		{
@@ -26,7 +79,7 @@ class Evaluations extends CI_Controller
 			$this->load->view('templates/main/topnav');
 			$this->load->view('templates/main/sidebar');
 			$this->load->view('templates/main/wrapper');
-			$this->load->view('evaluations/index', $data); //loading page and data
+			$this->load->view('evaluations/evaluate', $data); //loading page and data
 			$this->load->view('templates/main/footer');
 		}
 		else

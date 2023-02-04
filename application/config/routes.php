@@ -14,8 +14,8 @@ $route['auth/register'] = 'auth/register';
 
 /*********  ROUTES FOR ADMIN  *********/
 $route['admin'] = 'admins/index';
-$route['admin/evaluate/(:any)'] = 'evaluations/index/$1';
-$route['admin/report'] = 'report/index';
+$route['admin/evaluate/(:any)'] = 'evaluations/evaluate/$1';
+$route['admin/evaluate'] = 'evaluations/index';
 
 
 /*********  ROUTES FOR USERS  *********/
