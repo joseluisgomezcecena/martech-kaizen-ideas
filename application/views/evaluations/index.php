@@ -56,10 +56,9 @@
 			</div>
 			<div class="card-body">
 
-				<table id="data-table" class="table dataTable">
+				<table style="font-size: 12px;" id="data-table" class="table dataTable">
 					<thead>
 							<th>Titulo</th>
-							<th>Descripción</th>
 							<th>Nombre</th>
 							<th>Numero de empleado</th>
 							<th>Fecha</th>
@@ -69,8 +68,34 @@
 							<th>Acciones</th>
 					</thead>
 					<tbody>
-						<?php foreach (): ?>
-
+						<?php foreach ($ideas as $idea): ?>
+							<tr>
+								<td><?php echo $idea['title'] ?></td>
+								<td><?php echo $idea['nombre'] ?></td>
+								<td><?php echo $idea['numero_empleado'] ?></td>
+								<td><?php echo $idea['fecha'] ?></td>
+								<td><?php echo $idea['plant'] ?></td>
+								<td><?php echo $idea['equipo1'] ?><br><?php echo $idea['equipo2'] ?><br><?php echo $idea['equipo3'] ?></td>
+								<td>
+									<?php
+									if($idea['status'] == "0") {
+										echo "Pendiente";
+									}
+									if($idea['status'] == "1") {
+										echo "Aceptado";
+									}
+									if($idea['status'] == "2") {
+										echo "Premiado";
+									}
+									if($idea['status'] == "3") {
+										echo "Rechazado";
+									}
+									?>
+								</td>
+								<td>
+									<a href="<?php echo base_url() . "admin/evaluate/" . $idea['id'] ?>" class="btn btn-primary">Evaluar</a>
+								</td>
+							</tr>
 						<?php endforeach ?>
 					</tbody>
 

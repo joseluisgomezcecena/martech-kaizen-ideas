@@ -57,7 +57,7 @@ class Evaluations extends CI_Controller
 	public function evaluate($id)
 	{
 		$data['title'] = '💡Evaluaciones | Martech Medical Ideas v2.0.';
-		$data['idea'] = $this->IdeaModel->get_all($id);
+		$data['idea'] = $this->IdeaModel->get($id);
 
 		if(empty($data['idea']))
 		{
@@ -75,6 +75,8 @@ class Evaluations extends CI_Controller
 
 		if($this->form_validation->run() === FALSE)
 		{
+
+
 			$this->load->view('templates/main/header',$data);
 			$this->load->view('templates/main/topnav');
 			$this->load->view('templates/main/sidebar');

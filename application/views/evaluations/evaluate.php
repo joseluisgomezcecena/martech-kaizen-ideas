@@ -16,7 +16,7 @@
 					}
 				?>
 
-				<?php echo form_open_multipart(base_url() . "evaluations/index/" . $idea['id']); ?>
+				<?php echo form_open_multipart(base_url() . "evaluations/evaluate/" . $idea['id']); ?>
 
 				<div class="row">
 					<div class="form-group col">
