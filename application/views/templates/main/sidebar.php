@@ -4,15 +4,24 @@
 		<ul class="side-nav-menu scrollable">
 			<!--Main-->
 			<li class="nav-item dropdown open">
-				<a class="dropdown-toggle" href="javascript:void(0);">
-                                <span class="icon-holder">
-                                    <i class="fa fa-id-card fa-lg"></i>
-                                </span>
-					<span class="title">Pantalla Principal</span>
-					<span class="arrow">
-                                    <i class="arrow-icon"></i>
-                                </span>
-				</a>
+				<?php if (isset($this->session->userdata['logged_in'])) : ?>
+					<a class="dropdown-toggle" href="javascript:void(0);">
+						<span class="icon-holder">
+							<i class="fa fa-laptop fa-lg"></i>
+						</span>
+						<span class="title">Registro de Ideas</span>
+						<span class="arrow"><i class="arrow-icon"></i></span>
+					</a>
+				<?php else : ?>
+					<a class="dropdown-toggle" href="javascript:void(0);">
+						<span class="icon-holder">
+							<i class="fa fa-lightbulb fa-lg"></i>
+						</span>
+							<span class="title">Administrador</span>
+							<span class="arrow"><i class="arrow-icon"></i></span>
+					</a>
+				<?php endif; ?>
+
 				<ul class="dropdown-menu">
 					<li>
 						<?php if (isset($this->session->userdata['logged_in'])) : ?>
@@ -20,7 +29,6 @@
 						<?php else : ?>
 							<a href="<?php echo base_url() ?>/">Regresar</a>
 						<?php endif; ?>
-
 					</li>
 				</ul>
 			</li>
