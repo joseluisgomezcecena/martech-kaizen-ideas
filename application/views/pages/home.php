@@ -58,7 +58,7 @@
 					<br>
 					<span class="mt-5" style="text-decoration: none; font-weight: bold; font-size: 1.0rem">
 						<a class="" href="<?php echo base_url() ?>auth/login">Iniciar Sesión ></a><br><br/>
-						<a class="" href="<?php echo base_url() ?>ideas/update">Olvide Mi Contraseña ></a>
+						<a class="" href="http://mxmtsvrandon1/authentication">Olvide Mi Contraseña ></a>
 					</span>
 				</div>
 			</div>
