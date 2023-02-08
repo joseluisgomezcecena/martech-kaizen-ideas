@@ -25,7 +25,7 @@
 				<ul class="dropdown-menu">
 					<li>
 						<?php if (isset($this->session->userdata['logged_in'])) : ?>
-							<a href="<?php echo base_url() ?>/admin">Principal</a>
+							<a href="<?php echo base_url() ?>/admin">Pantalla Principal</a>
 						<?php else : ?>
 							<a href="<?php echo base_url() ?>">Regresar</a>
 						<?php endif; ?>
@@ -47,13 +47,11 @@
                                 </span>
 				</a>
 				<ul class="dropdown-menu">
-					<!--
+
 					<li>
-						<a href="<?php echo base_url() ?>admin/ingredients">Planners</a></li>
-					<li>
-						<a href="<?php echo base_url() ?>admin/sizes">Horarios</a>
+						<a href="<?php echo base_url() ?>admin/evaluate">Ver Todas</a>
 					</li>
-					-->
+
 				</ul>
 			</li>
 			<?php endif; ?>
