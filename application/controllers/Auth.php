@@ -67,7 +67,7 @@ class Auth extends CI_Controller{
 
 		//session message
 		$this->session->set_flashdata('user_logged_out', 'You have logged out.');
-		redirect(base_url() . 'users/login');
+		redirect(base_url());
 	}
 
 
