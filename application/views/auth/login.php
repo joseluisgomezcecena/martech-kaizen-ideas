@@ -33,7 +33,7 @@
 						</div>
 						<div class="form-group">
 							<label class="font-weight-semibold" for="password">Contraseña:</label>
-							<a class="float-right font-size-13 text-muted" href="">Olvidaste tu contraseña?</a>
+							<a class="float-right font-size-13 text-muted" href="http://mxmtsvrandon1/authentication">Olvidaste tu contraseña?</a>
 							<div class="input-affix m-b-10">
 								<i class="prefix-icon anticon anticon-lock"></i>
 								<input type="password" class="form-control" id="password" name="password" placeholder="Tu contraseña">
@@ -43,7 +43,7 @@
 							<div class="d-flex align-items-center justify-content-between">
                                                 <span class="font-size-13 text-muted">
                                                     No tienes cuenta?
-                                                    <a class="small" href=""> Registrate</a>
+                                                    <a class="small" href="http://mxmtsvrandon1/authentication"> Registrate</a>
                                                 </span>
 								<button type="submit" class="btn btn-primary">Ingresar</button>
 							</div>
