@@ -40,6 +40,7 @@
 						<a href="javascript:void(0);" data-toggle="dropdown">
 							<i class="anticon anticon-bell notification-badge"></i>
 						</a>
+						<!--
 						<div class="dropdown-menu pop-notification">
 							<div class="p-v-15 p-h-25 border-bottom d-flex justify-content-between align-items-center">
 								<p class="text-dark font-weight-semibold m-b-0">
@@ -99,6 +100,7 @@
 								</div>
 							</div>
 						</div>
+						-->
 					</li>
 					<li class="dropdown dropdown-animated scale-left">
 						<div class="pointer" data-toggle="dropdown">
