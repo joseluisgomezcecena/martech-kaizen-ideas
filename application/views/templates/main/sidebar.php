@@ -27,7 +27,7 @@
 						<?php if (isset($this->session->userdata['logged_in'])) : ?>
 							<a href="<?php echo base_url() ?>/admin">Principal</a>
 						<?php else : ?>
-							<a href="<?php echo base_url() ?>/">Regresar</a>
+							<a href="<?php echo base_url() ?>">Regresar</a>
 						<?php endif; ?>
 					</li>
 				</ul>
