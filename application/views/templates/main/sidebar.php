@@ -9,7 +9,7 @@
 						<span class="icon-holder">
 							<i class="fa fa-laptop fa-lg"></i>
 						</span>
-						<span class="title">Registro de Ideas</span>
+						<span class="title">Administrador</span>
 						<span class="arrow"><i class="arrow-icon"></i></span>
 					</a>
 				<?php else : ?>
@@ -17,7 +17,7 @@
 						<span class="icon-holder">
 							<i class="fa fa-lightbulb fa-lg"></i>
 						</span>
-							<span class="title">Administrador</span>
+							<span class="title">Registro de Ideas</span>
 							<span class="arrow"><i class="arrow-icon"></i></span>
 					</a>
 				<?php endif; ?>

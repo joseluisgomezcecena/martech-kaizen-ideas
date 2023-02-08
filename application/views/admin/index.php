@@ -70,11 +70,13 @@
 					<h5 class="font-weight-bolder">Ideas Recibidas Por Mes.</h5>
 
 					<div>
+						<!--
 						<div class="btn-group">
 							<button class="btn btn-sm btn-dark">
 								<span>Ver Reportes</span>
 							</button>
 						</div>
+						-->
 					</div>
 
 				</div>
@@ -95,7 +97,7 @@
 				<div class="d-flex justify-content-between align-items-center">
 					<h5 class="m-b-0">Mas Recientes (Últimas 5)</h5>
 					<div>
-						<a href="<?php echo base_url() ?>admin/report" class="btn btn-sm btn-dark">Ver Todas</a>
+						<a href="<?php echo base_url() ?>admin/evaluate" class="btn btn-sm btn-dark">Ver Todas</a>
 					</div>
 				</div>
 				<div class="m-t-30">
