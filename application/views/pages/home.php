@@ -92,7 +92,7 @@
 			</div>
 			<div class="modal-body">
 				<video width="100%"  controls>
-					<source src="<?php echo base_url() ?>assets/uploads/tutorial.mp4" type="video/mp4">
+					<source src="<?php echo base_url() ?>assets/uploads/tutorial2.mp4" type="video/mp4">
 					Tu explorador no soporta los videos HTML.
 				</video>
 			</div>
