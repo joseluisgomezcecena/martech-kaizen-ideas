@@ -26,6 +26,17 @@
 </div>
 
 <div class="container">
+
+	<div style="background: rgb(19,234,149); background: linear-gradient(90deg, rgba(19,234,149,1) 0%, rgba(63,63,225,1) 57%, rgba(0,212,255,1) 80%); background-repeat: no-repeat; background-size: cover; background-position: center center;" class="col-lg-12 card">
+		<div class="card-body">
+			<h1 class="font-weight-bolder text-white">
+				Tutorial de uso de la plataforma
+			</h1>
+			<button class="btn btn-secondary btn-rounded bold" data-toggle="modal" data-target="#exampleModal">Tutorial Aqui</button>
+		</div>
+	</div>
+
+
 	<div class="row mt-5">
 		<div class="col-lg-8">
 			<div style="min-height: 400px" class="card">
@@ -67,3 +78,27 @@
 	</div>
 </div>
 
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<video width="100%"  controls>
+					<source src="<?php echo base_url() ?>assets/uploads/tutorial.mp4" type="video/mp4">
+					Tu explorador no soporta los videos HTML.
+				</video>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+			</div>
+		</div>
+	</div>
+</div>
